@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMAN 1 WONGSOREJO - Berkarakter, Berprestasi, Berteknologi</title>
+    <title>SMAN 1 WONGSOREJO - Portal Utama, Informatika & CBT Hub</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -44,7 +44,7 @@
             -webkit-text-fill-color: transparent;
         }
         .hero-bg {
-            background: linear-gradient(135deg, rgba(11, 30, 54, 0.92) 0%, rgba(0, 75, 147, 0.88) 100%), 
+            background: linear-gradient(135deg, rgba(11, 30, 54, 0.94) 0%, rgba(0, 75, 147, 0.90) 100%), 
                         url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -54,14 +54,13 @@
 <body class="bg-smanjo-lightBg text-slate-800 dark:bg-smanjo-darkBg dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col justify-between">
 
     <!-- NAVBAR HEADER -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 dark:bg-smanjo-navy/90 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/90 dark:bg-smanjo-navy/90 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
                 <!-- LOGO & BRAND -->
                 <a href="#" class="flex items-center gap-3 group">
                     <div class="w-12 h-12 bg-smanjo-blue dark:bg-smanjo-navy rounded-xl p-2 shadow-md group-hover:scale-105 transition-transform flex items-center justify-center border-2 border-smanjo-gold">
-                        <!-- Custom Modern SVG Badge SMANJO -->
                         <svg viewBox="0 0 100 100" class="w-full h-full text-smanjo-gold fill-current">
                             <path d="M50 5 L85 20 L85 55 C85 75 50 95 50 95 C50 95 15 75 15 55 L15 20 Z" fill="#004B93" stroke="#FFC72C" stroke-width="6"/>
                             <circle cx="50" cy="45" r="18" fill="#FFC72C"/>
@@ -73,32 +72,46 @@
                         <span class="text-xl font-display font-extrabold tracking-tight text-smanjo-blue dark:text-white block leading-none">
                             SMAN 1 WONGSOREJO
                         </span>
-                        <span class="text-xs font-semibold tracking-widest text-smanjo-gold uppercase">SMANJO BANYUWANGI</span>
+                        <span class="text-xs font-semibold tracking-widest text-smanjo-gold uppercase">PORTAL INTEGRASI AKADEMIK</span>
                     </div>
                 </a>
 
-                <!-- DESKTOP MENU -->
-                <nav class="hidden lg:flex items-center space-x-1 font-medium">
-                    <a href="#beranda" class="px-3 py-2 rounded-lg text-smanjo-blue dark:text-smanjo-gold font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Beranda</a>
-                    <a href="#profil" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-smanjo-blue dark:hover:text-smanjo-gold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Profil</a>
-                    <a href="#portal" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-smanjo-blue dark:hover:text-smanjo-gold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Portal CBT</a>
-                    <a href="#berita" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-smanjo-blue dark:hover:text-smanjo-gold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Berita</a>
-                    <a href="#ekskul" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-smanjo-blue dark:hover:text-smanjo-gold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Ekskul & Fasilitas</a>
-                    <a href="#kontak" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-smanjo-blue dark:hover:text-smanjo-gold hover:bg-slate-100 dark:hover:bg-slate-800 transition">Kontak</a>
+                <!-- DESKTOP NAVIGATION -->
+                <nav class="hidden lg:flex items-center space-x-1 font-medium text-xs">
+                    <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-btn px-3 py-2 rounded-lg text-smanjo-blue dark:text-smanjo-gold font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i class="fa-solid fa-house me-1"></i> Dashboard
+                    </button>
+                    <button onclick="switchTab('informatika')" id="nav-informatika" class="nav-btn px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-smanjo-blue dark:hover:text-smanjo-gold hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i class="fa-solid fa-code me-1"></i> Informatika
+                    </button>
+                    <button onclick="switchTab('tugas')" id="nav-tugas" class="nav-btn px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-smanjo-blue dark:hover:text-smanjo-gold hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i class="fa-solid fa-list-check me-1"></i> Tugas & Kelas
+                    </button>
+                    <button onclick="switchTab('rekap')" id="nav-rekap" class="nav-btn px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-smanjo-blue dark:hover:text-smanjo-gold hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i class="fa-solid fa-table-list me-1"></i> Rekap Nilai
+                    </button>
                 </nav>
 
-                <!-- RIGHT ACTION & DARK MODE TOGGLE -->
+                <!-- USER LOGIN & CONTROLS -->
                 <div class="flex items-center gap-3">
-                    <button id="theme-toggle" type="button" aria-label="Toggle Dark Mode" class="p-2.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all focus:outline-none">
-                        <i id="theme-toggle-dark-icon" class="fas me-1 fa-moon text-lg hidden"></i>
-                        <i id="theme-toggle-light-icon" class="fas me-1 fa-sun text-lg text-smanjo-gold hidden"></i>
-                    </button>
-                    
-                    <a href="#portal" class="hidden sm:inline-flex items-center gap-2 bg-smanjo-gold hover:bg-yellow-400 text-smanjo-navy font-bold px-4 py-2 rounded-xl shadow-md transition transform hover:-translate-y-0.5">
-                        <i class="fa-solid fa-laptop-code"></i> CBT Portal
-                    </a>
+                    <div id="user-info-bar" class="hidden sm:flex items-center gap-2 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 text-xs">
+                        <i id="user-role-icon" class="fa-solid fa-user-graduate text-smanjo-blue dark:text-smanjo-gold"></i>
+                        <span id="user-display-name" class="font-bold">Ahmad (Siswa)</span>
+                        <button onclick="handleLogout()" class="text-red-500 hover:text-red-700 ms-1" title="Logout">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </button>
+                    </div>
 
-                    <!-- MOBILE MENU BUTTON -->
+                    <button id="login-modal-btn" onclick="openModal('modal-login')" class="bg-smanjo-blue hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-right-to-bracket"></i> Login Portal
+                    </button>
+
+                    <!-- DARK MODE TOGGLE -->
+                    <button id="theme-toggle" type="button" aria-label="Toggle Dark Mode" class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all">
+                        <i id="theme-toggle-dark-icon" class="fas fa-moon text-base hidden"></i>
+                        <i id="theme-toggle-light-icon" class="fas fa-sun text-base text-smanjo-gold hidden"></i>
+                    </button>
+
                     <button id="mobile-menu-btn" type="button" class="lg:hidden p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">
                         <i class="fa-solid fa-bars text-xl"></i>
                     </button>
@@ -107,556 +120,649 @@
         </div>
 
         <!-- MOBILE MENU DROPDOWN -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-smanjo-navy px-4 pt-3 pb-6 space-y-2">
-            <a href="#beranda" class="mobile-link block px-3 py-2 rounded-lg font-medium text-smanjo-blue dark:text-smanjo-gold hover:bg-slate-100 dark:hover:bg-slate-800">Beranda</a>
-            <a href="#profil" class="mobile-link block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Profil</a>
-            <a href="#portal" class="mobile-link block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Portal CBT</a>
-            <a href="#berita" class="mobile-link block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Berita & Prestasi</a>
-            <a href="#ekskul" class="mobile-link block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Ekskul & Fasilitas</a>
-            <a href="#kontak" class="mobile-link block px-3 py-2 rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Kontak</a>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-smanjo-navy px-4 pt-3 pb-6 space-y-2 text-xs font-medium">
+            <button onclick="switchTab('dashboard'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                <i class="fa-solid fa-house me-2"></i> Dashboard
+            </button>
+            <button onclick="switchTab('informatika'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                <i class="fa-solid fa-code me-2"></i> Modul & CBT Informatika
+            </button>
+            <button onclick="switchTab('tugas'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                <i class="fa-solid fa-list-check me-2"></i> Tugas & Pengumpulan
+            </button>
+            <button onclick="switchTab('rekap'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                <i class="fa-solid fa-table-list me-2"></i> Rekap Nilai
+            </button>
         </div>
     </header>
 
     <main class="flex-grow">
-        <!-- 1. HERO SECTION -->
-        <section id="beranda" class="hero-bg relative min-h-[85vh] flex items-center py-16 text-white overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-t from-smanjo-darkBg via-transparent to-transparent opacity-80"></div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div class="grid lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-8 space-y-6">
-                        <div class="inline-flex items-center gap-2 bg-smanjo-gold/20 backdrop-blur-md border border-smanjo-gold/40 text-smanjo-gold px-4 py-1.5 rounded-full text-sm font-semibold">
-                            <span class="w-2 h-2 rounded-full bg-smanjo-gold animate-ping"></span>
-                            Kurikulum Merdeka • SMANJO BANYUWANGI
-                        </div>
-                        <h1 class="text-4xl sm:text-6xl font-display font-extrabold tracking-tight leading-tight">
-                            SMA NEGERI 1 <br/>
-                            <span class="gradient-text">WONGSOREJO</span>
-                        </h1>
-                        <p class="text-lg sm:text-xl text-slate-200 max-w-2xl font-light leading-relaxed">
-                            Mewujudkan generasi terdidik yang <strong class="text-smanjo-gold">Berkarakter</strong>, unggul dalam <strong class="text-smanjo-gold">Berprestasi</strong>, serta siap menjawab tantangan global <strong class="text-smanjo-gold">Berteknologi</strong>.
-                        </p>
-                        <div class="flex flex-wrap gap-4 pt-4">
-                            <a href="#portal" class="bg-smanjo-gold hover:bg-yellow-400 text-smanjo-navy font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-yellow-500/20 transition transform hover:-translate-y-1 flex items-center gap-2">
-                                <i class="fa-solid fa-graduation-cap text-lg"></i>
-                                Portal CBT / Ujian
-                            </a>
-                            <a href="#profil" class="bg-white/10 backdrop-blur-md hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-3.5 rounded-xl transition flex items-center gap-2">
-                                <i class="fa-solid fa-circle-info"></i>
-                                Jelajahi Profil
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Hero Quick Stats / Badge -->
-                    <div class="lg:col-span-4 hidden lg:block">
-                        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-2xl space-y-6">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-smanjo-gold/20 border border-smanjo-gold flex items-center justify-center text-smanjo-gold text-2xl font-bold">
-                                    <i class="fa-solid fa-trophy"></i>
-                                </div>
-                                <div>
-                                    <div class="text-2xl font-bold font-display text-white">Akreditasi A</div>
-                                    <div class="text-xs text-slate-300">Standar Mutu Pendidikan Nasional</div>
-                                </div>
+        <!-- 1. DASHBOARD TAB -->
+        <section id="tab-dashboard" class="tab-content block">
+            <div class="hero-bg py-12 text-white relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-8">
+                        <div>
+                            <div class="inline-flex items-center gap-2 bg-smanjo-gold/20 backdrop-blur-md border border-smanjo-gold/40 text-smanjo-gold px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                                <span class="w-2 h-2 rounded-full bg-smanjo-gold animate-ping"></span>
+                                Tahun Ajaran 2026/2027 • Kurikulum Merdeka
                             </div>
-                            <hr class="border-white/10">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-black/20 p-3 rounded-xl border border-white/5">
-                                    <div class="text-2xl font-bold text-smanjo-gold font-display">25+</div>
-                                    <div class="text-xs text-slate-300">Tenaga Pendidik</div>
-                                </div>
-                                <div class="bg-black/20 p-3 rounded-xl border border-white/5">
-                                    <div class="text-2xl font-bold text-smanjo-gold font-display">12+</div>
-                                    <div class="text-xs text-slate-300">Ekstrakurikuler</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. QUICK ACCESS PORTAL / CBT SECTION -->
-        <section id="portal" class="py-12 bg-slate-100 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-2xl mx-auto mb-8">
-                    <h2 class="text-2xl sm:text-3xl font-display font-bold text-smanjo-blue dark:text-smanjo-gold">Portal Akademik & CBT SMANJO</h2>
-                    <p class="text-sm text-slate-600 dark:text-slate-400">Akses cepat layanan ujian online, administrasi, dan pembelajaran digital siswa.</p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Link Card 1 -->
-                    <a href="#" onclick="showPortalModal('CBT Online Exam', 'Sistem CBT SMANJO siap digunakan untuk STS, SAS, dan Ujian Sekolah.')" class="bg-white dark:bg-smanjo-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-smanjo-blue dark:text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:bg-smanjo-blue group-hover:text-white transition">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-1 group-hover:text-smanjo-blue dark:group-hover:text-smanjo-gold transition">CBT SMANJO</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Sistem ujian berbasis komputer & smartphone online.</p>
-                    </a>
-
-                    <!-- Link Card 2 -->
-                    <a href="#" onclick="showPortalModal('Info PPDB / SPMB', 'Informasi Penerimaan Peserta Didik Baru SMAN 1 Wongsorejo.')" class="bg-white dark:bg-smanjo-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl mb-4 group-hover:bg-amber-500 group-hover:text-white transition">
-                            <i class="fa-solid fa-user-plus"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-1 group-hover:text-smanjo-blue dark:group-hover:text-smanjo-gold transition">PPDB / SPMB</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Pendaftaran siswa baru dan jalur masuk sekolah.</p>
-                    </a>
-
-                    <!-- Link Card 3 -->
-                    <a href="#" onclick="showPortalModal('E-Learning SMANJO', 'Portal modul ajar digital, materi, dan tugas Kurikulum Merdeka.')" class="bg-white dark:bg-smanjo-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-4 group-hover:bg-emerald-600 group-hover:text-white transition">
-                            <i class="fa-solid fa-book-open-reader"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-1 group-hover:text-smanjo-blue dark:group-hover:text-smanjo-gold transition">E-Learning</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Akses bahan ajar & tugas Kurikulum Merdeka online.</p>
-                    </a>
-
-                    <!-- Link Card 4 -->
-                    <a href="#" onclick="showPortalModal('Portal Nilai & Rapor', 'Sistem Informasi Rapor Digital (ARD) SMAN 1 Wongsorejo.')" class="bg-white dark:bg-smanjo-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 group">
-                        <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-4 group-hover:bg-purple-600 group-hover:text-white transition">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 dark:text-white mb-1 group-hover:text-smanjo-blue dark:group-hover:text-smanjo-gold transition">Portal Rapor</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Cek rekap nilai dan perkembangan belajar akademik.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. SAMBUTAN KEPALA SEKOLAH & VISI MISI -->
-        <section id="profil" class="py-20 bg-white dark:bg-smanjo-darkBg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- SAMBUTAN -->
-                <div class="grid lg:grid-cols-12 gap-12 items-center mb-20">
-                    <div class="lg:col-span-5 relative">
-                        <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-smanjo-gold">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Kepala Sekolah SMAN 1 Wongsorejo" class="w-full h-auto object-cover hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="absolute -bottom-6 -right-6 bg-smanjo-blue text-white p-4 rounded-xl shadow-lg z-20 hidden sm:block border border-smanjo-gold">
-                            <p class="text-xs text-smanjo-gold font-semibold uppercase">Kepala SMAN 1 Wongsorejo</p>
-                            <p class="text-sm font-bold">Dr. Akhlakul Karimah, S.E., M.M.</p>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-7 space-y-5">
-                        <div class="inline-block px-3 py-1 rounded-md bg-blue-100 dark:bg-blue-900/50 text-smanjo-blue dark:text-smanjo-gold text-xs font-bold uppercase">
-                            Sambutan Kepala Sekolah
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-display font-bold text-slate-900 dark:text-white">
-                            Dr. Akhlakul Karimah, S.E., M.M.
-                        </h2>
-                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base italic">
-                            "Assalamu’alaikum Warahmatullahi Wabarakatuh. Selamat datang di portal resmi SMA Negeri 1 Wongsorejo Banyuwangi. Kami berkomitmen untuk terus menghadirkan lingkungan belajar yang inovatif, inklusif, dan adaptif terhadap perkembangan teknologi digital tanpa mengesampingkan penguatan karakter mulia siswa."
-                        </p>
-                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
-                            Melalui Kurikulum Merdeka, SMANJO membina para murid untuk merdeka berpikir, bernalar kritis, serta memiliki jiwa kewirausahaan dan keolahragaan yang tangguh. Mari bersama-sama mencetak generasi emas masa depan.
-                        </p>
-                        <div class="pt-2">
-                            <div class="font-display font-bold text-smanjo-blue dark:text-smanjo-gold">SMAN 1 WONGSOREJO BANYUWANGI</div>
-                            <div class="text-xs text-slate-500 dark:text-slate-400">Jawa Timur, Indonesia</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- VISI MISI KURIKULUM MERDEKA -->
-                <div class="bg-slate-50 dark:bg-smanjo-darkCard rounded-3xl p-8 sm:p-12 border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <div class="text-center max-w-3xl mx-auto mb-10">
-                        <h3 class="text-2xl sm:text-3xl font-display font-bold text-smanjo-blue dark:text-smanjo-gold">Visi & Misi Sekolah</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Landasan SMANJO dalam mengimplementasikan Kurikulum Merdeka</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- VISI -->
-                        <div class="bg-white dark:bg-slate-800/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <div class="w-10 h-10 rounded-lg bg-smanjo-gold text-smanjo-navy flex items-center justify-center font-bold text-xl mb-4">
-                                <i class="fa-solid fa-eye"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Visi Utama</h4>
-                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-medium">
-                                "Terwujudnya Peserta Didik SMAN 1 Wongsorejo yang Berkarakter Profil Pelajar Pancasila, Unggul Berprestasi Akademik & Non-Akademik, serta Berdaya Saing Berbasis Teknologi dan Ramah Lingkungan."
+                            <h1 class="text-3xl sm:text-4xl font-display font-extrabold tracking-tight">
+                                Sistem Integrasi Pembelajaran <span class="gradient-text">SMANJO</span>
+                            </h1>
+                            <p class="text-sm text-slate-300 mt-1 max-w-xl">
+                                Akses Modul Informatika, Bank Soal CBT, Pengumpulan Tugas Interaktif, & Rekap Nilai Terintegrasi SMAN 1 Wongsorejo.
                             </p>
                         </div>
 
-                        <!-- MISI -->
-                        <div class="bg-white dark:bg-slate-800/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <div class="w-10 h-10 rounded-lg bg-smanjo-blue text-white flex items-center justify-center font-bold text-xl mb-4">
-                                <i class="fa-solid fa-bullseye"></i>
+                        <div class="flex items-center gap-3">
+                            <button onclick="switchTab('informatika')" class="bg-smanjo-gold hover:bg-yellow-400 text-smanjo-navy font-bold px-5 py-3 rounded-xl shadow-lg transition flex items-center gap-2 text-xs">
+                                <i class="fa-solid fa-laptop-code text-base"></i> Masuk Kelas Informatika
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STATISTIK CARDS -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl">
+                            <div class="flex items-center justify-between text-xs text-slate-300">
+                                <span>Modul Informatika</span>
+                                <i class="fa-solid fa-book-bookmark text-smanjo-gold"></i>
                             </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Misi Strategis</h4>
-                            <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                                <li class="flex items-start gap-2">
-                                    <i class="fa-solid fa-check text-smanjo-gold mt-1"></i>
-                                    <span>Menyelenggarakan pembelajaran berbasis Projek Penguatan Profil Pelajar Pancasila (P5).</span>
+                            <div class="text-2xl font-bold font-display mt-2">12 Bab</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl">
+                            <div class="flex items-center justify-between text-xs text-slate-300">
+                                <span>Tugas Aktif</span>
+                                <i class="fa-solid fa-list-check text-emerald-400"></i>
+                            </div>
+                            <div id="dash-tugas-aktif" class="text-2xl font-bold font-display mt-2">0</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl">
+                            <div class="flex items-center justify-between text-xs text-slate-300">
+                                <span>Latihan CBT</span>
+                                <i class="fa-solid fa-square-check text-amber-400"></i>
+                            </div>
+                            <div class="text-2xl font-bold font-display mt-2">Ready (Fase E & F)</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl">
+                            <div class="flex items-center justify-between text-xs text-slate-300">
+                                <span>Total Rombel</span>
+                                <i class="fa-solid fa-school text-blue-400"></i>
+                            </div>
+                            <div class="text-2xl font-bold font-display mt-2">18 Kelas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FITUR UTAMA GRID -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <h2 class="text-xl font-display font-bold text-slate-900 dark:text-white mb-6">Pintas Layanan Utama</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div onclick="switchTab('informatika')" class="bg-white dark:bg-smanjo-darkCard p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md cursor-pointer transition">
+                        <div class="w-12 h-12 bg-blue-100 text-smanjo-blue rounded-2xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="font-bold text-base mb-1">Mata Pelajaran Informatika</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Akses Modul Kurikulum Merdeka Fase E & F, latihan kuis CBT, dan IDE praktikum mini HTML/JS.</p>
+                    </div>
+
+                    <div onclick="switchTab('tugas')" class="bg-white dark:bg-smanjo-darkCard p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md cursor-pointer transition">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-upload"></i>
+                        </div>
+                        <h3 class="font-bold text-base mb-1">Upload & Pengumpulan Tugas</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Kumpulkan tugas tepat waktu, unggah link proyek, dan dapatkan penilaian dari guru.</p>
+                    </div>
+
+                    <div onclick="switchTab('rekap')" class="bg-white dark:bg-smanjo-darkCard p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md cursor-pointer transition">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-table"></i>
+                        </div>
+                        <h3 class="font-bold text-base mb-1">Rekap Nilai Otomatis</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Pantau rekapitulasi nilai tugas & CBT secara real-time yang tersimpan di LocalStorage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. INFORMATIKA TAB (MODUL, CBT, PRAKTIKUM) -->
+        <section id="tab-informatika" class="tab-content hidden py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                    <div>
+                        <span class="text-xs font-bold text-smanjo-blue dark:text-smanjo-gold uppercase">KURIKULUM MERDEKA</span>
+                        <h2 class="text-2xl font-display font-bold">Mata Pelajaran Informatika SMANJO</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Materi Fase E (Kelas X), Fase F (Kelas XI/XII), Kuis CBT & IDE Praktikum Web</p>
+                    </div>
+
+                    <!-- TAB SUB-INFORMATIKA -->
+                    <div class="bg-slate-200 dark:bg-slate-800 p-1 rounded-2xl flex gap-1 text-xs font-bold">
+                        <button onclick="switchInfoSub('materi')" id="sub-materi" class="px-4 py-2 rounded-xl bg-smanjo-blue text-white shadow-sm transition">Modul Materi</button>
+                        <button onclick="switchInfoSub('cbt')" id="sub-cbt" class="px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-smanjo-blue transition">Kuis CBT</button>
+                        <button onclick="switchInfoSub('praktikum')" id="sub-praktikum" class="px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-smanjo-blue transition">IDE Praktikum</button>
+                    </div>
+                </div>
+
+                <!-- SUB 1: MODUL MATERI -->
+                <div id="info-content-materi" class="info-sub-content block">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- FASE E -->
+                        <div class="bg-white dark:bg-smanjo-darkCard p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 bg-blue-100 text-smanjo-blue font-bold rounded-full text-xs">Fase E (Kelas X)</span>
+                                <i class="fa-solid fa-code text-smanjo-gold"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Algoritma, Pemrograman & Web Dasar</h3>
+                            <ul class="space-y-3 text-xs text-slate-600 dark:text-slate-300">
+                                <li class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl flex justify-between items-center">
+                                    <span><i class="fa-solid fa-file-lines me-2 text-smanjo-blue"></i>Bab 1: Berpikir Komputasional</span>
+                                    <button onclick="showInfoDetail('Bab 1: Berpikir Komputasional', 'Berpikir komputasional mencakup 4 pilar utama: Dekomposisi, Pengenalan Pola, Abstraksi, dan Perancangan Algoritma.')" class="text-smanjo-blue font-bold hover:underline">Baca</button>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="fa-solid fa-check text-smanjo-gold mt-1"></i>
-                                    <span>Mengembangkan talenta olahraga (khususnya Bola Voli), seni, dan bakat sains murid secara optimal.</span>
+                                <li class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl flex justify-between items-center">
+                                    <span><i class="fa-solid fa-file-lines me-2 text-smanjo-blue"></i>Bab 2: Struktur HTML & CSS Fundamentals</span>
+                                    <button onclick="showInfoDetail('Bab 2: HTML & CSS', 'Memahami tag sintaks dasar HTML5, styling CSS3 modern dengan flexbox dan grid responsif.')" class="text-smanjo-blue font-bold hover:underline">Baca</button>
                                 </li>
-                                <li class="flex items-start gap-2">
-                                    <i class="fa-solid fa-check text-smanjo-gold mt-1"></i>
-                                    <span>Mengintegrasikan digitalisasi sekolah melalui CBT & E-Learning modern.</span>
+                                <li class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl flex justify-between items-center">
+                                    <span><i class="fa-solid fa-file-lines me-2 text-smanjo-blue"></i>Bab 3: Pemrograman Dasar JavaScript</span>
+                                    <button onclick="showInfoDetail('Bab 3: JavaScript Dasar', 'Pengenalan variabel, tipe data, kondisi IF-ELSE, perulangan, serta manipulasi DOM dasar.')" class="text-smanjo-blue font-bold hover:underline">Baca</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- FASE F -->
+                        <div class="bg-white dark:bg-smanjo-darkCard p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 bg-amber-100 text-amber-800 font-bold rounded-full text-xs">Fase F (Kelas XI / XII)</span>
+                                <i class="fa-solid fa-network-wired text-smanjo-blue"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Pengembangan Web Lanjutan & Database</h3>
+                            <ul class="space-y-3 text-xs text-slate-600 dark:text-slate-300">
+                                <li class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl flex justify-between items-center">
+                                    <span><i class="fa-solid fa-file-lines me-2 text-amber-600"></i>Bab 1: Web Framework & Tailwind CSS</span>
+                                    <button onclick="showInfoDetail('Bab 1: Utility-First CSS', 'Penggunaan Tailwind CSS untuk mempercepat pembuatan antarmuka aplikasi web modern.')" class="text-smanjo-blue font-bold hover:underline">Baca</button>
+                                </li>
+                                <li class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl flex justify-between items-center">
+                                    <span><i class="fa-solid fa-file-lines me-2 text-amber-600"></i>Bab 2: REST API & Asynchronous JS</span>
+                                    <button onclick="showInfoDetail('Bab 2: REST API & Fetch', 'Memahami konsep Fetch API, Async/Await, dan integrasi data JSON dalam aplikasi web.')" class="text-smanjo-blue font-bold hover:underline">Baca</button>
+                                </li>
+                                <li class="p-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl flex justify-between items-center">
+                                    <span><i class="fa-solid fa-file-lines me-2 text-amber-600"></i>Bab 3: LocalStorage & State Management</span>
+                                    <button onclick="showInfoDetail('Bab 3: LocalStorage', 'Menyimpan data persisten di browser pengguna menggunakan Web Storage API secara client-side.')" class="text-smanjo-blue font-bold hover:underline">Baca</button>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <!-- SUB 2: BANK SOAL KUIS CBT -->
+                <div id="info-content-cbt" class="info-sub-content hidden">
+                    <div class="bg-white dark:bg-smanjo-darkCard p-6 rounded-3xl border border-slate-200 dark:border-slate-800 max-w-2xl mx-auto shadow-md">
+                        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-4 mb-4">
+                            <div>
+                                <h3 class="font-bold text-base">Simulasi Kuis CBT Informatika</h3>
+                                <p class="text-xs text-slate-500">Soal Pilihan Ganda Interaktif SMANJO</p>
+                            </div>
+                            <span id="cbt-timer" class="px-3 py-1 bg-amber-100 text-amber-800 font-bold text-xs rounded-lg"><i class="fa-regular fa-clock me-1"></i>05:00</span>
+                        </div>
+
+                        <form id="cbt-quiz-form" onsubmit="submitCbtQuiz(event)" class="space-y-6 text-xs">
+                            <!-- Q1 -->
+                            <div>
+                                <p class="font-bold text-sm mb-2">1. Manakah tag HTML yang digunakan untuk membuat judul utama pada halaman web?</p>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800 cursor-pointer">
+                                        <input type="radio" name="q1" value="a" required> a) &lt;p&gt;
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800 cursor-pointer">
+                                        <input type="radio" name="q1" value="b"> b) &lt;h1&gt;
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800 cursor-pointer">
+                                        <input type="radio" name="q1" value="c"> c) &lt;head&gt;
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Q2 -->
+                            <div>
+                                <p class="font-bold text-sm mb-2">2. Fitur JavaScript yang digunakan untuk menyimpan data lokal di browser secara permanen adalah?</p>
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800 cursor-pointer">
+                                        <input type="radio" name="q2" value="a" required> a) SessionStorage
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800 cursor-pointer">
+                                        <input type="radio" name="q2" value="b"> b) LocalStorage
+                                    </label>
+                                    <label class="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-800 cursor-pointer">
+                                        <input type="radio" name="q2" value="c"> c) Cookie
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-smanjo-blue text-white py-3 rounded-xl font-bold text-xs hover:bg-blue-700 transition">
+                                Kirim Jawaban Kuis CBT
+                            </button>
+                        </form>
+
+                        <div id="cbt-result-box" class="hidden mt-6 p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 text-center">
+                            <h4 class="font-bold text-base text-emerald-800 dark:text-emerald-300">Hasil Kuis CBT Selesai!</h4>
+                            <p class="text-2xl font-black text-emerald-600 my-1" id="cbt-score-display">100 / 100</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-300">Nilai telah dicatat ke dalam Rekapitulasi Nilai Siswa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB 3: IDE PRAKTIKUM CODE EDITOR -->
+                <div id="info-content-praktikum" class="info-sub-content hidden">
+                    <div class="bg-white dark:bg-smanjo-darkCard p-6 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-base"><i class="fa-solid fa-code text-smanjo-blue me-2"></i>IDE Praktikum Web Mini SMANJO</h3>
+                            <button onclick="runCode()" class="bg-emerald-600 text-white px-4 py-2 rounded-xl font-bold text-xs hover:bg-emerald-700 transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-play"></i> Jalankan Kode
+                            </button>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold mb-1 text-slate-500">Editor HTML & CSS</label>
+                                <textarea id="code-input" rows="10" class="w-full p-3 font-mono text-xs rounded-2xl border border-slate-300 dark:border-slate-700 bg-slate-900 text-emerald-400 focus:outline-none" placeholder="Tulis HTML di sini...">&lt;div style="text-align:center; padding: 20px; font-family: sans-serif;"&gt;
+  &lt;h2 style="color: #004B93;"&gt;Halo SMAN 1 Wongsorejo!&lt;/h2&gt;
+  &lt;p&gt;Praktikum Pemrograman Web Sukses!&lt;/p&gt;
+&lt;/div&gt;</textarea>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold mb-1 text-slate-500">Preview Hasil</label>
+                                <iframe id="code-output" class="w-full h-56 rounded-2xl border border-slate-300 dark:border-slate-700 bg-white"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 4. BERITA & PRESTASI TERBARU (FILTER & SEARCHABLE) -->
-        <section id="berita" class="py-20 bg-slate-100 dark:bg-slate-900">
+        <!-- 3. TUGAS & KELAS TAB -->
+        <section id="tab-tugas" class="tab-content hidden py-10 bg-slate-50 dark:bg-slate-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                     <div>
-                        <div class="inline-block px-3 py-1 rounded-md bg-smanjo-gold/20 text-smanjo-navy dark:text-smanjo-gold text-xs font-bold uppercase mb-2">
-                            Kabar SMANJO
-                        </div>
-                        <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white">Berita & Pengumuman Terbaru</h2>
+                        <h2 class="text-2xl font-display font-bold">Portal Tugas & Pengumpulan</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Pilih kelas dan kumpulkan tugas tepat waktu</p>
                     </div>
 
-                    <!-- Search Input -->
-                    <div class="w-full md:w-72">
-                        <div class="relative">
-                            <input type="text" id="news-search" placeholder="Cari berita..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-smanjo-blue">
-                            <i class="fa-solid fa-magnifying-glass absolute left-3 top-3.5 text-slate-400 text-sm"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CARDS GRID -->
-                <div id="news-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- News Card 1 -->
-                    <article class="news-card bg-white dark:bg-smanjo-darkCard rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition duration-300 flex flex-col">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=600&auto=format&fit=crop" alt="POPDA Volley SMANJO" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-smanjo-blue text-white text-xs font-bold px-3 py-1 rounded-full">PRESTASI</span>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                            <div>
-                                <div class="text-xs text-slate-400 mb-2"><i class="fa-regular fa-calendar me-1"></i> Oktober 2026</div>
-                                <h3 class="news-title font-bold text-lg text-slate-800 dark:text-white leading-snug hover:text-smanjo-blue dark:hover:text-smanjo-gold cursor-pointer transition">
-                                    Tim Voli Putra SMANJO Meraih Juara di POPDA & KEJURPROV
-                                </h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2">
-                                    Tim Voli kebanggaan SMAN 1 Wongsorejo kembali mengukir prestasi gemilang dalam ajang kejuaraan daerah.
-                                </p>
-                            </div>
-                            <button onclick="showNewsDetail('Tim Voli SMANJO Juara POPDA', 'Tim Voli SMAN 1 Wongsorejo sukses memboyong piala dalam kejuaraan tingkat daerah. Kepala Sekolah Dr. Akhlakul Karimah memberikan apresiasi luar biasa kepada seluruh atlet dan pelatih.')" class="text-smanjo-blue dark:text-smanjo-gold font-semibold text-sm hover:underline flex items-center gap-1 self-start">
-                                Baca Selengkapnya <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </button>
-                        </div>
-                    </article>
-
-                    <!-- News Card 2 -->
-                    <article class="news-card bg-white dark:bg-smanjo-darkCard rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition duration-300 flex flex-col">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=600&auto=format&fit=crop" alt="Pelaksanaan STS SMANJO" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">PENGUMUMAN</span>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                            <div>
-                                <div class="text-xs text-slate-400 mb-2"><i class="fa-regular fa-calendar me-1"></i> September 2026</div>
-                                <h3 class="news-title font-bold text-lg text-slate-800 dark:text-white leading-snug hover:text-smanjo-blue dark:hover:text-smanjo-gold cursor-pointer transition">
-                                    Pelaksanaan Sumatif Tengah Semester (STS) Berbasis CBT Online
-                                </h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2">
-                                    Seluruh siswa diimbau mempersiapkan perangkat dan kartu ujian CBT untuk pelaksanaan STS secara tertib.
-                                </p>
-                            </div>
-                            <button onclick="showNewsDetail('Jadwal STS CBT Online', 'Pelaksanaan STS berjalan lancar dengan menggunakan aplikasi CBT digital sekolah. Diharapkan seluruh siswa menjaga integritas dan ketertiban.')" class="text-smanjo-blue dark:text-smanjo-gold font-semibold text-sm hover:underline flex items-center gap-1 self-start">
-                                Baca Selengkapnya <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </button>
-                        </div>
-                    </article>
-
-                    <!-- News Card 3 -->
-                    <article class="news-card bg-white dark:bg-smanjo-darkCard rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition duration-300 flex flex-col">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" alt="P5 Kurikulum Merdeka" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">KEGIATAN</span>
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                            <div>
-                                <div class="text-xs text-slate-400 mb-2"><i class="fa-regular fa-calendar me-1"></i> Agustus 2026</div>
-                                <h3 class="news-title font-bold text-lg text-slate-800 dark:text-white leading-snug hover:text-smanjo-blue dark:hover:text-smanjo-gold cursor-pointer transition">
-                                    Gelar Karya P5: Kewirausahaan & Budaya Lokal Banyuwangi
-                                </h3>
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2">
-                                    Siswa SMANJO memamerkan produk kearifan lokal dan karya inovatif dalam puncak pameran Projek P5.
-                                </p>
-                            </div>
-                            <button onclick="showNewsDetail('Gelar Karya P5 SMANJO', 'Pameran P5 berlangsung meriah dengan partisipasi seluruh kelas menampilkan karya olahan khas Wongsorejo Banyuwangi serta seni pertunjukan.')" class="text-smanjo-blue dark:text-smanjo-gold font-semibold text-sm hover:underline flex items-center gap-1 self-start">
-                                Baca Selengkapnya <i class="fa-solid fa-arrow-right text-xs"></i>
-                            </button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. EKSTRAKURIKULER & FASILITAS TAB SECTION -->
-        <section id="ekskul" class="py-20 bg-white dark:bg-smanjo-darkBg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <div class="inline-block px-3 py-1 rounded-md bg-blue-100 dark:bg-blue-900/50 text-smanjo-blue dark:text-smanjo-gold text-xs font-bold uppercase mb-2">
-                        Pengembangan Diri & Sarana
-                    </div>
-                    <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white">Ekstrakurikuler & Fasilitas</h2>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Mendukung bakat minat serta kenyamanan belajar seluruh warga SMANJO.</p>
-                </div>
-
-                <!-- TABS SWITCHER -->
-                <div class="flex justify-center mb-8">
-                    <div class="inline-flex p-1 bg-slate-100 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700">
-                        <button id="btn-tab-ekskul" onclick="switchTab('ekskul')" class="px-6 py-2.5 rounded-xl font-bold text-sm transition shadow-sm bg-smanjo-blue text-white">
-                            <i class="fa-solid fa-volleyball me-2"></i>Ekstrakurikuler
-                        </button>
-                        <button id="btn-tab-fasilitas" onclick="switchTab('fasilitas')" class="px-6 py-2.5 rounded-xl font-bold text-sm transition text-slate-600 dark:text-slate-300 hover:text-smanjo-blue">
-                            <i class="fa-solid fa-building-columns me-2"></i>Fasilitas Sekolah
+                    <div id="btn-guru-add-task" class="hidden">
+                        <button onclick="openModal('modal-buat-tugas')" class="bg-smanjo-gold text-smanjo-navy font-bold px-4 py-2.5 rounded-xl text-xs shadow hover:bg-yellow-400 transition">
+                            <i class="fa-solid fa-plus me-1"></i> Buat Tugas Baru
                         </button>
                     </div>
                 </div>
 
-                <!-- CONTENT EKSKUL GRID -->
-                <div id="content-ekskul" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-slate-50 dark:bg-smanjo-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center hover:border-smanjo-gold transition group">
-                        <div class="w-16 h-16 mx-auto rounded-full bg-blue-100 dark:bg-blue-900/40 text-smanjo-blue dark:text-smanjo-gold flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-volleyball"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 dark:text-white">Bola Voli</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Ekskul unggulan SMANJO pembina atlet berprestasi Jawa Timur.</p>
-                    </div>
-
-                    <div class="bg-slate-50 dark:bg-smanjo-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center hover:border-smanjo-gold transition group">
-                        <div class="w-16 h-16 mx-auto rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-campground"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 dark:text-white">Pramuka</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Membentuk kedisiplinan dan karakter kepemimpinan siswa.</p>
-                    </div>
-
-                    <div class="bg-slate-50 dark:bg-smanjo-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center hover:border-smanjo-gold transition group">
-                        <div class="w-16 h-16 mx-auto rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 dark:text-white">Informatika & App Dev</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Klub pemrograman, desain web, dan sains teknologi digital.</p>
-                    </div>
-
-                    <div class="bg-slate-50 dark:bg-smanjo-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center hover:border-smanjo-gold transition group">
-                        <div class="w-16 h-16 mx-auto rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
-                            <i class="fa-solid fa-music"></i>
-                        </div>
-                        <h3 class="font-bold text-lg text-slate-800 dark:text-white">Seni & Tari Gandrung</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">Melestarikan kebudayaan khas Banyuwangi dan seni musik modern.</p>
-                    </div>
+                <!-- DAFTAR KELAS -->
+                <div class="flex gap-2 overflow-x-auto pb-4 mb-6">
+                    <button onclick="filterKelas('semua')" class="px-4 py-2 rounded-xl text-xs font-bold bg-smanjo-blue text-white whitespace-nowrap">Semua Kelas</button>
+                    <button onclick="filterKelas('X-1')" class="px-4 py-2 rounded-xl text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 whitespace-nowrap">Kelas X-1</button>
+                    <button onclick="filterKelas('XI-1')" class="px-4 py-2 rounded-xl text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 whitespace-nowrap">Kelas XI-1</button>
+                    <button onclick="filterKelas('XII-1')" class="px-4 py-2 rounded-xl text-xs font-medium bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 whitespace-nowrap">Kelas XII-1</button>
                 </div>
 
-                <!-- CONTENT FASILITAS GRID (Hidden by Default) -->
-                <div id="content-fasilitas" class="hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-slate-50 dark:bg-smanjo-darkCard rounded-2xl p-6 border border-slate-200 dark:border-slate-800 flex gap-4 items-start">
-                        <div class="w-12 h-12 rounded-xl bg-smanjo-blue text-white flex-shrink-0 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-desktop"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-800 dark:text-white text-base">Lab Komputer CBT</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Dilengkapi puluhan PC modern dan koneksi internet cepat untuk ujian & praktek coding.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-50 dark:bg-smanjo-darkCard rounded-2xl p-6 border border-slate-200 dark:border-slate-800 flex gap-4 items-start">
-                        <div class="w-12 h-12 rounded-xl bg-smanjo-gold text-smanjo-navy flex-shrink-0 flex items-center justify-center text-xl font-bold">
-                            <i class="fa-solid fa-book"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-800 dark:text-white text-base">Perpustakaan Digital</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Koleksi buku cetak & ebook terlengkap dengan ruang baca yang nyaman dan ber-AC.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-50 dark:bg-smanjo-darkCard rounded-2xl p-6 border border-slate-200 dark:border-slate-800 flex gap-4 items-start">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex-shrink-0 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-baseball-bat-ball"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-800 dark:text-white text-base">Lapangan Olahraga</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Lapangan Bola Voli dan Basket standar kejuaraan untuk latihan harian siswa.</p>
-                        </div>
-                    </div>
+                <!-- GRID TUGAS -->
+                <div id="tugas-grid-container" class="grid md:grid-cols-3 gap-6">
+                    <!-- Dynamic rendering via JS -->
                 </div>
-
             </div>
         </section>
 
-        <!-- 6. LOKASI & KONTAK SECTION -->
-        <section id="kontak" class="py-20 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+        <!-- 4. REKAP NILAI TAB -->
+        <section id="tab-rekap" class="tab-content hidden py-10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-12 gap-10">
-                    <div class="lg:col-span-5 space-y-6">
-                        <div>
-                            <div class="inline-block px-3 py-1 rounded-md bg-smanjo-gold/20 text-smanjo-navy dark:text-smanjo-gold text-xs font-bold uppercase mb-2">
-                                Hubungi Kami
-                            </div>
-                            <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white">Lokasi & Informasi Kontak</h2>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-4 p-4 bg-white dark:bg-smanjo-darkCard rounded-2xl border border-slate-200 dark:border-slate-800">
-                                <div class="w-10 h-10 rounded-xl bg-smanjo-blue/10 text-smanjo-blue dark:text-smanjo-gold flex items-center justify-center text-lg flex-shrink-0">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 dark:text-white text-sm">Alamat Sekolah</h4>
-                                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
-                                        Jl. Raya Situbondo, Wongsorejo, Kab. Banyuwangi, Jawa Timur 68453
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4 p-4 bg-white dark:bg-smanjo-darkCard rounded-2xl border border-slate-200 dark:border-slate-800">
-                                <div class="w-10 h-10 rounded-xl bg-smanjo-blue/10 text-smanjo-blue dark:text-smanjo-gold flex items-center justify-center text-lg flex-shrink-0">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 dark:text-white text-sm">Email Resmi</h4>
-                                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">info@sman1wongsorejo.sch.id</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4 p-4 bg-white dark:bg-smanjo-darkCard rounded-2xl border border-slate-200 dark:border-slate-800">
-                                <div class="w-10 h-10 rounded-xl bg-smanjo-blue/10 text-smanjo-blue dark:text-smanjo-gold flex items-center justify-center text-lg flex-shrink-0">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 dark:text-white text-sm">Telepon / Fax</h4>
-                                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">(0333) 510xxx</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div>
+                        <h2 class="text-2xl font-display font-bold">Tabel Rekapitulasi Nilai Siswa</h2>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Rekap otomatis pengumpulan tugas & hasil kuis CBT tersimpan di LocalStorage</p>
                     </div>
 
-                    <!-- MAP EMBED / PLACEHOLDER -->
-                    <div class="lg:col-span-7 bg-white dark:bg-smanjo-darkCard p-2 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden h-80 lg:h-auto">
-                        <iframe class="w-full h-full rounded-2xl border-0" src="https://maps.google.com/maps?q=SMAN%201%20Wongsorejo%20Banyuwangi&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button onclick="exportRekapCsv()" class="bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-emerald-700 transition flex items-center gap-1.5 w-fit">
+                        <i class="fa-solid fa-file-csv"></i> Ekspor Data CSV
+                    </button>
+                </div>
+
+                <!-- TABLE REKAP -->
+                <div class="bg-white dark:bg-smanjo-darkCard rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+                                    <th class="p-4 font-bold">Nama Siswa</th>
+                                    <th class="p-4 font-bold">Kelas</th>
+                                    <th class="p-4 font-bold">Judul Tugas / Aktivitas</th>
+                                    <th class="p-4 font-bold">Waktu Pengumpulan</th>
+                                    <th class="p-4 font-bold">Status</th>
+                                    <th class="p-4 font-bold">Nilai</th>
+                                    <th class="p-4 font-bold text-center">Aksi (Guru)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rekap-table-body" class="divide-y divide-slate-200 dark:divide-slate-800">
+                                <!-- Rendered via JS -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER & GITHUB DEPLOYMENT GUIDE -->
-    <footer class="bg-smanjo-navy text-slate-300 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
-                
-                <div class="md:col-span-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-smanjo-blue rounded-xl border border-smanjo-gold flex items-center justify-center text-smanjo-gold font-bold">
-                            <i class="fa-solid fa-school"></i>
-                        </div>
-                        <span class="text-lg font-display font-extrabold text-white">SMAN 1 WONGSOREJO</span>
-                    </div>
-                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
-                        Sekolah Menengah Atas Negeri 1 Wongsorejo Banyuwangi. Berkomitmen mencetak generasi berkarakter, berprestasi, dan berteknologi unggul.
-                    </p>
-                </div>
-
-                <div class="md:col-span-3 space-y-3">
-                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Tautan Cepat</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#beranda" class="hover:text-smanjo-gold transition">Beranda</a></li>
-                        <li><a href="#profil" class="hover:text-smanjo-gold transition">Profil Sekolah</a></li>
-                        <li><a href="#portal" class="hover:text-smanjo-gold transition">Portal Ujian CBT</a></li>
-                        <li><a href="#berita" class="hover:text-smanjo-gold transition">Berita & Pengumuman</a></li>
-                    </ul>
-                </div>
-
-                <div class="md:col-span-3 space-y-3">
-                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Media Sosial</h4>
-                    <div class="flex space-x-3">
-                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-smanjo-blue text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-smanjo-blue text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-smanjo-blue text-slate-300 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- GITHUB PAGES DEPLOYMENT TUTORIAL BOX -->
-            <div class="my-6 p-4 rounded-2xl bg-slate-900/90 border border-slate-700/80 text-xs">
-                <div class="font-bold text-smanjo-gold mb-2 flex items-center gap-2">
-                    <i class="fa-brands fa-github text-base text-white"></i> PETUNJUK CARA HOSTING WEBSITE INI KE GITHUB PAGES:
-                </div>
-                <ol class="list-decimal list-inside space-y-1 text-slate-300">
-                    <li>Buat akun di <strong class="text-white">GitHub.com</strong> dan buat Repository Baru bernama <code class="bg-black/50 px-1 py-0.5 rounded text-amber-300">sman1wongsorejo</code> (Atur Public).</li>
-                    <li>Simpan file website ini sebagai <code class="bg-black/50 px-1 py-0.5 rounded text-amber-300">index.html</code>.</li>
-                    <li>Upload file <code class="bg-black/50 px-1 py-0.5 rounded text-amber-300">index.html</code> tersebut ke dalam Repository GitHub yang baru dibuat.</li>
-                    <li>Buka menu <strong class="text-white">Settings</strong> &gt; <strong class="text-white">Pages</strong> pada repository.</li>
-                    <li>Pada opsi <em>Branch</em>, pilih <strong class="text-white">main</strong> / <strong class="text-white">master</strong>, folder <strong class="text-white">/(root)</strong>, lalu klik <strong class="text-white">Save</strong>.</li>
-                    <li>Tunggu 1-2 menit, landing page SMANJO akan aktif secara gratis di URL: <code class="text-smanjo-gold font-mono">https://username.github.io/sman1wongsorejo</code></li>
-                </ol>
-            </div>
-
-            <hr class="border-slate-800 my-6">
-
-            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-                <p>&copy; 2026 SMAN 1 WONGSOREJO. All rights reserved.</p>
-                <p class="mt-2 sm:mt-0">Designed for GitHub Pages Deployment</p>
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-smanjo-navy text-slate-400 border-t border-slate-800 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs">
+            <p>&copy; 2026 SMAN 1 WONGSOREJO BANYUWANGI • Sistem Portal Integrasi Pembelajaran & CBT</p>
         </div>
     </footer>
 
-    <!-- MODAL POPUP DIALOG -->
-    <div id="info-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-smanjo-darkCard max-w-md w-full rounded-2xl p-6 shadow-2xl border border-slate-200 dark:border-slate-700 transform transition-all scale-95 opacity-0" id="modal-box">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="modal-title" class="font-bold text-lg text-slate-900 dark:text-white">Judul Informasi</h3>
-                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-white p-1">
-                    <i class="fa-solid fa-xmark text-xl"></i>
+    <!-- MODAL 1: LOGIN PORTAL -->
+    <div id="modal-login" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-smanjo-darkCard max-w-sm w-full rounded-3xl p-6 shadow-2xl border border-slate-200 dark:border-slate-700">
+            <div class="flex justify-between items-center mb-4 border-b border-slate-200 dark:border-slate-700 pb-3">
+                <h3 class="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-right-to-bracket text-smanjo-blue dark:text-smanjo-gold"></i> Login Portal SMANJO
+                </h3>
+                <button onclick="closeModal('modal-login')" class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
-            <p id="modal-body" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Isi pesan detail.
-            </p>
-            <button onclick="closeModal()" class="w-full bg-smanjo-blue text-white font-bold py-2.5 rounded-xl hover:bg-blue-700 transition">
-                Tutup
-            </button>
+
+            <form onsubmit="handleLoginSubmit(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-bold mb-1">Pilih Peran (Role)</label>
+                    <select id="login-role" class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 font-bold">
+                        <option value="siswa">Siswa (NISN)</option>
+                        <option value="guru">Guru (NIP / NUPTK)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-bold mb-1">Nama Lengkap</label>
+                    <input type="text" id="login-name" required placeholder="Masukkan nama..." class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+                </div>
+                <div>
+                    <label class="block font-bold mb-1">Nomor Induk (NISN / NIP)</label>
+                    <input type="password" id="login-id" required placeholder="Masukkan nomor..." class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+                </div>
+                <button type="submit" class="w-full bg-smanjo-blue text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+                    Masuk Sekarang
+                </button>
+            </form>
         </div>
     </div>
 
-    <!-- JAVASCRIPT INTERACTIONS -->
-    <script>
-        // 1. DARK MODE TOGGLE SYSTEM
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
+    <!-- MODAL 2: UPLOAD/KUMPULKAN TUGAS -->
+    <div id="modal-kumpul" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-smanjo-darkCard max-w-md w-full rounded-3xl p-6 shadow-2xl border border-slate-200 dark:border-slate-700">
+            <div class="flex justify-between items-center mb-4 border-b border-slate-200 dark:border-slate-700 pb-3">
+                <h3 class="font-bold text-base flex items-center gap-2">
+                    <i class="fa-solid fa-upload text-smanjo-blue"></i> Pengumpulan Tugas
+                </h3>
+                <button onclick="closeModal('modal-kumpul')" class="text-slate-400 hover:text-slate-600">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
 
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            lightIcon.classList.remove('hidden');
-        } else {
-            document.documentElement.classList.remove('dark');
-            darkIcon.classList.remove('hidden');
+            <form onsubmit="handleKumpulSubmit(event)" class="space-y-4 text-xs">
+                <input type="hidden" id="kumpul-tugas-id">
+                <div>
+                    <label class="block font-bold mb-1">Judul Tugas</label>
+                    <input type="text" id="kumpul-tugas-judul" readonly class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 font-bold">
+                </div>
+                <div>
+                    <label class="block font-bold mb-1">Tautan File Tugas (Google Drive / GitHub / Docs)</label>
+                    <input type="url" id="kumpul-link" required placeholder="https://drive.google.com/..." class="w-full p-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
+                </div>
+                <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold hover:bg-emerald-700 transition">
+                    Kirim Tugas Saya
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // STATE MANAGEMENT WITH LOCALSTORAGE
+        let currentUser = JSON.parse(localStorage.getItem('smanjo_user')) || { name: 'Siswa SMANJO', role: 'siswa' };
+        
+        let taskList = JSON.parse(localStorage.getItem('smanjo_tasks_list')) || [
+            { id: 't1', judul: 'Projek Landing Page Web SMANJO', kelas: 'X-1', deadline: '2026-11-05T23:59', mapel: 'Informatika' },
+            { id: 't2', judul: 'Latihan Soal Vektor & Kinematika', kelas: 'XI-1', deadline: '2026-11-01T12:00', mapel: 'Fisika' }
+        ];
+
+        let rekapNilai = JSON.parse(localStorage.getItem('smanjo_rekap_nilai')) || [
+            { id: 'r1', nama: 'Ahmad Supriadi', kelas: 'X-1', aktivitas: 'Projek Landing Page Web SMANJO', waktu: '2026-10-29 10:15', status: 'Tepat Waktu', nilai: 90 },
+            { id: 'r2', nama: 'Siti Nurhaliza', kelas: 'X-1', aktivitas: 'Kuis CBT Informatika', waktu: '2026-10-30 08:00', status: 'Selesai', nilai: 100 }
+        ];
+
+        // INITIALIZATION
+        window.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            updateUserUI();
+            renderTugas();
+            renderRekapTable();
+            runCode();
+        });
+
+        // TAB SWITCHING
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`tab-${tabId}`).classList.remove('hidden');
         }
 
-        themeToggleBtn.addEventListener('click', function() {
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
+        function switchInfoSub(subId) {
+            document.querySelectorAll('.info-sub-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`info-content-${subId}`).classList.remove('hidden');
+        }
 
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // LOGIN & USER MANAGEMENT
+        function updateUserUI() {
+            const userInfoBar = document.getElementById('user-info-bar');
+            const loginBtn = document.getElementById('login-modal-btn');
+            const btnGuruAdd = document.getElementById('btn-guru-add-task');
+
+            if (currentUser && currentUser.name) {
+                userInfoBar.classList.remove('hidden');
+                loginBtn.classList.add('hidden');
+                document.getElementById('user-display-name').innerText = `${currentUser.name} (${currentUser.role.toUpperCase()})`;
+                
+                if (currentUser.role === 'guru') {
+                    btnGuruAdd.classList.remove('hidden');
                 } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
+                    btnGuruAdd.classList.add('hidden');
                 }
             } else {
+                userInfoBar.classList.add('hidden');
+                loginBtn.classList.remove('hidden');
+                btnGuruAdd.classList.add('hidden');
+            }
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            currentUser = {
+                name: document.getElementById('login-name').value,
+                role: document.getElementById('login-role').value
+            };
+            localStorage.setItem('smanjo_user', JSON.stringify(currentUser));
+            updateUserUI();
+            closeModal('modal-login');
+        }
+
+        function handleLogout() {
+            currentUser = null;
+            localStorage.removeItem('smanjo_user');
+            updateUserUI();
+        }
+
+        // TUGAS & REKAP NILAI RENDER
+        function renderTugas() {
+            const container = document.getElementById('tugas-grid-container');
+            container.innerHTML = '';
+
+            taskList.forEach(t => {
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-smanjo-darkCard p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between';
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-100 text-smanjo-blue uppercase">${t.mapel}</span>
+                            <span class="text-[10px] font-bold text-slate-400">Kelas ${t.kelas}</span>
+                        </div>
+                        <h3 class="font-bold text-base mb-1">${t.judul}</h3>
+                        <p class="text-xs text-slate-500 mb-4"><i class="fa-regular fa-clock me-1"></i>Deadline: ${t.deadline}</p>
+                    </div>
+                    <button onclick="openKumpulModal('${t.id}', '${t.judul}')" class="w-full bg-smanjo-blue hover:bg-blue-700 text-white py-2 rounded-xl text-xs font-bold transition">
+                        Kumpulkan Tugas
+                    </button>
+                `;
+                container.appendChild(card);
+            });
+
+            document.getElementById('dash-tugas-aktif').innerText = taskList.length;
+        }
+
+        function openKumpulModal(id, judul) {
+            document.getElementById('kumpul-tugas-id').value = id;
+            document.getElementById('kumpul-tugas-judul').value = judul;
+            openModal('modal-kumpul');
+        }
+
+        function handleKumpulSubmit(e) {
+            e.preventDefault();
+            const judul = document.getElementById('kumpul-tugas-judul').value;
+            
+            const newRekap = {
+                id: 'r-' + Date.now(),
+                nama: currentUser ? currentUser.name : 'Siswa SMANJO',
+                kelas: 'X-1',
+                aktivitas: judul,
+                waktu: new Date().toLocaleString('id-ID'),
+                status: 'Tepat Waktu',
+                nilai: 85
+            };
+
+            rekapNilai.unshift(newRekap);
+            localStorage.setItem('smanjo_rekap_nilai', JSON.stringify(rekapNilai));
+            renderRekapTable();
+            closeModal('modal-kumpul');
+            alert('Tugas Anda berhasil dikirim!');
+        }
+
+        function renderRekapTable() {
+            const tbody = document.getElementById('rekap-table-body');
+            tbody.innerHTML = '';
+
+            rekapNilai.forEach((r, idx) => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-50 dark:hover:bg-slate-800/50 transition';
+                tr.innerHTML = `
+                    <td class="p-4 font-bold text-slate-900 dark:text-white">${r.nama}</td>
+                    <td class="p-4">${r.kelas}</td>
+                    <td class="p-4">${r.aktivitas}</td>
+                    <td class="p-4 text-slate-400 text-[11px]">${r.waktu}</td>
+                    <td class="p-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">${r.status}</span></td>
+                    <td class="p-4 font-extrabold text-smanjo-blue dark:text-smanjo-gold">${r.nilai}</td>
+                    <td class="p-4 text-center">
+                        <button onclick="editNilai(${idx})" class="p-1 text-slate-400 hover:text-smanjo-blue" title="Edit Nilai"><i class="fa-solid fa-pen-to-square"></i></button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function editNilai(idx) {
+            if (currentUser && currentUser.role === 'guru') {
+                const newScore = prompt('Masukkan nilai baru untuk siswa:', rekapNilai[idx].nilai);
+                if (newScore !== null) {
+                    rekapNilai[idx].nilai = parseInt(newScore) || 0;
+                    localStorage.setItem('smanjo_rekap_nilai', JSON.stringify(rekapNilai));
+                    renderRekapTable();
+                }
+            } else {
+                alert('Akses Terbatas: Hanya akun ber-role Guru yang dapat mengubah nilai.');
+            }
+        }
+
+        function exportRekapCsv() {
+            let csvContent = "data:text/csv;charset=utf-8,Nama,Kelas,Aktivitas,Waktu,Status,Nilai\n";
+            rekapNilai.forEach(r => {
+                csvContent += `"${r.nama}","${r.kelas}","${r.aktivitas}","${r.waktu}","${r.status}",${r.nilai}\n`;
+            });
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "Rekap_Nilai_SMANJO.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+
+        // CBT KUIS SUBMIT
+        function submitCbtQuiz(e) {
+            e.preventDefault();
+            const q1 = document.querySelector('input[name="q1"]:checked')?.value;
+            const q2 = document.querySelector('input[name="q2"]:checked')?.value;
+
+            let score = 0;
+            if (q1 === 'b') score += 50;
+            if (q2 === 'b') score += 50;
+
+            document.getElementById('cbt-score-display').innerText = `${score} / 100`;
+            document.getElementById('cbt-result-box').classList.remove('hidden');
+
+            // Simpan ke Rekap
+            rekapNilai.unshift({
+                id: 'r-' + Date.now(),
+                nama: currentUser ? currentUser.name : 'Siswa SMANJO',
+                kelas: 'X-1',
+                aktivitas: 'Kuis CBT Informatika',
+                waktu: new Date().toLocaleString('id-ID'),
+                status: 'Selesai',
+                nilai: score
+            });
+            localStorage.setItem('smanjo_rekap_nilai', JSON.stringify(rekapNilai));
+            renderRekapTable();
+        }
+
+        // PRAKTIKUM CODE RUNNER
+        function runCode() {
+            const code = document.getElementById('code-input').value;
+            const iframe = document.getElementById('code-output').contentWindow.document;
+            iframe.open();
+            iframe.write(code);
+            iframe.close();
+        }
+
+        // MODAL & THEME UTILITIES
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+        
+        function showInfoDetail(title, desc) {
+            alert(`${title}\n\n${desc}`);
+        }
+
+        function initTheme() {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const darkIcon = document.getElementById('theme-toggle-dark-icon');
+            const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+            if (localStorage.getItem('color-theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+                lightIcon.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                darkIcon.classList.remove('hidden');
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                darkIcon.classList.toggle('hidden');
+                lightIcon.classList.toggle('hidden');
                 if (document.documentElement.classList.contains('dark')) {
                     document.documentElement.classList.remove('dark');
                     localStorage.setItem('color-theme', 'light');
@@ -664,94 +770,8 @@
                     document.documentElement.classList.add('dark');
                     localStorage.setItem('color-theme', 'dark');
                 }
-            }
-        });
-
-        // 2. MOBILE MENU TOGGLE
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
             });
-        });
-
-        // 3. TAB SWITCHER (Ekskul vs Fasilitas)
-        function switchTab(tabName) {
-            const btnEkskul = document.getElementById('btn-tab-ekskul');
-            const btnFasilitas = document.getElementById('btn-tab-fasilitas');
-            const contentEkskul = document.getElementById('content-ekskul');
-            const contentFasilitas = document.getElementById('content-fasilitas');
-
-            if (tabName === 'ekskul') {
-                contentEkskul.classList.remove('hidden');
-                contentFasilitas.classList.add('hidden');
-                btnEkskul.className = 'px-6 py-2.5 rounded-xl font-bold text-sm transition shadow-sm bg-smanjo-blue text-white';
-                btnFasilitas.className = 'px-6 py-2.5 rounded-xl font-bold text-sm transition text-slate-600 dark:text-slate-300 hover:text-smanjo-blue';
-            } else {
-                contentEkskul.classList.add('hidden');
-                contentFasilitas.classList.remove('hidden');
-                btnFasilitas.className = 'px-6 py-2.5 rounded-xl font-bold text-sm transition shadow-sm bg-smanjo-blue text-white';
-                btnEkskul.className = 'px-6 py-2.5 rounded-xl font-bold text-sm transition text-slate-600 dark:text-slate-300 hover:text-smanjo-blue';
-            }
         }
-
-        // 4. NEWS LIVE SEARCH FILTER
-        const searchInput = document.getElementById('news-search');
-        const newsCards = document.querySelectorAll('.news-card');
-
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            newsCards.forEach(card => {
-                const title = card.querySelector('.news-title').textContent.toLowerCase();
-                if (title.includes(query)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-
-        // 5. MODAL DIALOG CONTROLLER
-        const modal = document.getElementById('info-modal');
-        const modalBox = document.getElementById('modal-box');
-        const modalTitle = document.getElementById('modal-title');
-        const modalBody = document.getElementById('modal-body');
-
-        function showPortalModal(title, text) {
-            modalTitle.innerText = title;
-            modalBody.innerText = text;
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modalBox.classList.remove('scale-95', 'opacity-0');
-                modalBox.classList.add('scale-100', 'opacity-100');
-            }, 10);
-        }
-
-        function showNewsDetail(title, detail) {
-            showPortalModal(title, detail);
-        }
-
-        function closeModal() {
-            modalBox.classList.remove('scale-100', 'opacity-100');
-            modalBox.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 200);
-        }
-
-        // Close Modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
     </script>
 </body>
 </html>
